@@ -36,3 +36,5 @@ createInertiaApp({
     'password' => bcrypt('password123')
 ]);
 */
+
+
