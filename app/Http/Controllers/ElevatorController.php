@@ -9,20 +9,28 @@ use Inertia\Inertia;
 
 class ElevatorController extends Controller
 {
-    public function index()
+    public function index(\Illuminate\Http\Request $request)
     {
-        $elevators = Elevator::orderBy('designation')->get();
-        return Inertia::render('Elevators/Index', [
-            'elevators' => $elevators
+        $perPage = (int) $request->query('per_page', 10); // por defecto 10 por página
+        $elevators = \App\Models\Elevator::orderBy('designation')
+            ->paginate($perPage)
+            ->withQueryString();  
+
+        return \Inertia\Inertia::render('Elevators/Index', [
+            'elevators' => $elevators,
+            'filters'   => [
+                'per_page' => $perPage,
+            ],
         ]);
     }
+
 
     public function show(Elevator $elevator)
     {
         $year = request()->query('year', now()->year);
-        
+
         // Cargar revisiones del año
-        $revisions=$elevator->revisions()
+        $revisions = $elevator->revisions()
             ->where('year', $year)
             ->get()
             ->keyBy('month')
@@ -31,7 +39,7 @@ class ElevatorController extends Controller
                 'checked_at' => $r->checked_at,
                 'notes' => $r->notes
             ]);
-        
+
         // Rellenar meses faltantes
         $byMonth = [];
         for ($m = 1; $m <= 12; $m++) {
@@ -41,7 +49,7 @@ class ElevatorController extends Controller
                 'notes' => null
             ]);
         }
-        
+
         return Inertia::render('Elevators/Show', [
             'elevator' => $elevator,
             'year' => (int)$year,
@@ -52,26 +60,26 @@ class ElevatorController extends Controller
 
     public function store(Request $req)
     {
-        $data =$req->validate([
+        $data = $req->validate([
             'designation' => 'required|string|max:255',
             'address' => 'nullable|string|max:255',
             'is_active' => 'boolean'
         ]);
         $data['created_by'] = Auth::id();
         Elevator::create($data);
-        
+
         return redirect()->route('elevators.index');
     }
 
     public function update(Request $req, Elevator $elevator)
     {
-        $data =$req->validate([
+        $data = $req->validate([
             'designation' => 'string|max:255',
             'address' => 'nullable|string|max:255',
             'is_active' => 'boolean'
         ]);
         $elevator->update($data);
-        
+
         return redirect()->back();
     }
 
