@@ -36,7 +36,10 @@ const monthNames = [
 </script>
 
 <template>
-    <Head :title="`Revisiones - ${elevator.designation}`" />
+    <Head>
+    <title>Revisiones - {{ elevator.designation }}</title>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+</Head>
 
     <AuthenticatedLayout>
         <template #header>

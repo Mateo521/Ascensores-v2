@@ -15,7 +15,11 @@ const monthNames = [
 </script>
 
 <template>
-    <Head :title="`Estado - ${elevator.designation}`" />
+    <Head>
+    <title>Estado - {{ elevator.designation }}</title>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+</Head>
+
 
     <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
         <div class="max-w-5xl mx-auto">

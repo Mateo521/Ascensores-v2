@@ -28,3 +28,11 @@ createInertiaApp({
         color: '#4B5563',
     },
 });
+/*
+
+\App\Models\User::create([
+    'name' => 'Admin',
+    'email' => 'admin@ascensores.com',
+    'password' => bcrypt('password123')
+]);
+*/
