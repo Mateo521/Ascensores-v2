@@ -49,7 +49,7 @@ const translatePaginationLabel = (label) => {
       </h2>
     </template>
 
-    <div class="py-12">
+    <div class="py-12 px-2">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
         <!-- Formulario para agregar ascensor -->
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -115,7 +115,7 @@ const translatePaginationLabel = (label) => {
 
 
             <!-- Lista paginada -->
-            <div v-if="(elevators?.data?.length ?? 0) === 0" class="text-center py-12 text-gray-500 text-lg">
+            <div v-if="(elevators?.data?.length ?? 0) === 0" class="text-center py-12 px-2 text-gray-500 text-lg">
               No hay ascensores registrados. <br/> Agrega el primero usando el formulario de arriba.
             </div>
 
