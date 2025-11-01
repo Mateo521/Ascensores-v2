@@ -65,7 +65,7 @@
         .qr-code {
             display: block;
             width: 75%;
-            max-width: 240px; /* límite para A6 */
+            max-width: 200px; /* límite para A6 */
             height: auto;
             margin: 0 auto;
             border: 2px solid #2563eb;

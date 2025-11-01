@@ -80,7 +80,7 @@ const translatePaginationLabel = (label) => {
                 </div>
 
                 <!-- Botón y selector -->
-                <div class="grid grid-cols-[1fr_116px] justify-end gap-3">
+                <div class="grid grid-cols-1 w-full md:grid-cols-[1fr_116px] justify-end gap-3">
                   <button type="submit" :disabled="form.processing"
                     class="w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white font-bold text-base py-3 px-6 rounded-lg shadow-md disabled:opacity-50 transition-all">
                     {{ form.processing ? 'Agregando...' : '+ Agregar Ascensor' }}

@@ -56,7 +56,7 @@ const agregarAscensor = () => router.visit(route('elevators.index')); // redirig
       </div>
     </template>
 
-    <div class="py-10">
+    <div class="py-10 px-2">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
         <!-- Acciones grandes -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
