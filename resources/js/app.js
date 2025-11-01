@@ -32,7 +32,7 @@ createInertiaApp({
 
 \App\Models\User::create([
     'name' => 'Admin',
-    'email' => 'admin@ascensores.com',
+    'email' => 'mateovillalva42@gmail.com',
     'password' => bcrypt('password123')
 ]);
 */

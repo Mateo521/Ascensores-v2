@@ -26,9 +26,7 @@ const submit = () => {
         <Head title="Forgot Password" />
 
         <div class="mb-4 text-sm text-gray-600">
-            Forgot your password? No problem. Just let us know your email
-            address and we will email you a password reset link that will allow
-            you to choose a new one.
+            ¿Olvidaste tu contraseña? No hay problema. Solo indícanos tu correo electrónico y te enviamos un enlace para restablecerla y que puedas elegir una nueva.
         </div>
 
         <div
@@ -45,7 +43,7 @@ const submit = () => {
                 <TextInput
                     id="email"
                     type="email"
-                    class="mt-1 block w-full"
+                    class="mt-1 block py-2 px-1 w-full"
                     v-model="form.email"
                     required
                     autofocus
@@ -55,12 +53,12 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
-            <div class="mt-4 flex items-center justify-end">
+            <div class="mt-4 flex items-center  justify-end">
                 <PrimaryButton
-                    :class="{ 'opacity-25': form.processing }"
+                    :class="{ 'opacity-25 ': form.processing }"
                     :disabled="form.processing"
                 >
-                    Email Password Reset Link
+                    Enviar enlace para restablecer la contraseña
                 </PrimaryButton>
             </div>
         </form>

@@ -23,7 +23,7 @@ defineProps({
             <h2
                 class="text-xl font-semibold leading-tight text-gray-800"
             >
-                Profile
+                Perfil
             </h2>
         </template>
 
@@ -48,7 +48,7 @@ defineProps({
                 <div
                     class="bg-white p-4 shadow sm:rounded-lg sm:p-8"
                 >
-                    <DeleteUserForm class="max-w-xl" />
+                    <DeleteUserForm  /> <!-- class="max-w-xl" -->
                 </div>
             </div>
         </div>

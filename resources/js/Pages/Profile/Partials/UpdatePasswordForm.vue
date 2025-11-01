@@ -32,88 +32,108 @@ const updatePassword = () => {
     });
 };
 </script>
-
 <template>
     <section>
-        <header>
-            <h2 class="text-lg font-medium text-gray-900">
-                Update Password
+        <header class="mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">
+                Actualizar Contraseña
             </h2>
 
-            <p class="mt-1 text-sm text-gray-600">
-                Ensure your account is using a long, random password to stay
-                secure.
+            <p class="mt-2 text-base text-gray-600">
+                Asegúrate de usar una contraseña larga y segura para proteger tu cuenta.
             </p>
         </header>
 
-        <form @submit.prevent="updatePassword" class="mt-6 space-y-6">
+        <form @submit.prevent="updatePassword" class="mt-8 space-y-6">
+            <!-- Contraseña actual -->
             <div>
-                <InputLabel for="current_password" value="Current Password" />
+                <InputLabel 
+                    for="current_password" 
+                    value="Contraseña Actual" 
+                    class="text-base font-semibold text-gray-800 mb-2" 
+                />
 
                 <TextInput
                     id="current_password"
                     ref="currentPasswordInput"
                     v-model="form.current_password"
                     type="password"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full text-base px-4 py-3 rounded-lg"
                     autocomplete="current-password"
+                    placeholder="Ingresa tu contraseña actual"
                 />
 
                 <InputError
                     :message="form.errors.current_password"
-                    class="mt-2"
+                    class="mt-2 text-sm"
                 />
             </div>
 
+            <!-- Nueva contraseña -->
             <div>
-                <InputLabel for="password" value="New Password" />
+                <InputLabel 
+                    for="password" 
+                    value="Nueva Contraseña" 
+                    class="text-base font-semibold text-gray-800 mb-2" 
+                />
 
                 <TextInput
                     id="password"
                     ref="passwordInput"
                     v-model="form.password"
                     type="password"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full text-base px-4 py-3 rounded-lg"
                     autocomplete="new-password"
+                    placeholder="Mínimo 8 caracteres"
                 />
 
-                <InputError :message="form.errors.password" class="mt-2" />
+                <InputError :message="form.errors.password" class="mt-2 text-sm" />
             </div>
 
+            <!-- Confirmar contraseña -->
             <div>
                 <InputLabel
                     for="password_confirmation"
-                    value="Confirm Password"
+                    value="Confirmar Nueva Contraseña"
+                    class="text-base font-semibold text-gray-800 mb-2"
                 />
 
                 <TextInput
                     id="password_confirmation"
                     v-model="form.password_confirmation"
                     type="password"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full text-base px-4 py-3 rounded-lg"
                     autocomplete="new-password"
+                    placeholder="Repetí la nueva contraseña"
                 />
 
                 <InputError
                     :message="form.errors.password_confirmation"
-                    class="mt-2"
+                    class="mt-2 text-sm"
                 />
             </div>
 
-            <div class="flex items-center gap-4">
-                <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+            <!-- Botones -->
+            <div class="flex items-center gap-4 pt-2">
+                <PrimaryButton 
+                    :disabled="form.processing"
+                    class="text-base px-6 py-3 font-bold"
+                >
+                    {{ form.processing ? 'Guardando...' : 'Guardar Contraseña' }}
+                </PrimaryButton>
 
                 <Transition
-                    enter-active-class="transition ease-in-out"
-                    enter-from-class="opacity-0"
-                    leave-active-class="transition ease-in-out"
-                    leave-to-class="opacity-0"
+                    enter-active-class="transition ease-in-out duration-300"
+                    enter-from-class="opacity-0 translate-x-2"
+                    leave-active-class="transition ease-in-out duration-300"
+                    leave-to-class="opacity-0 translate-x-2"
                 >
                     <p
                         v-if="form.recentlySuccessful"
-                        class="text-sm text-gray-600"
+                        class="text-base font-semibold text-green-600 flex items-center gap-2"
                     >
-                        Saved.
+                        <span class="inline-block">✓</span>
+                        Contraseña actualizada
                     </p>
                 </Transition>
             </div>

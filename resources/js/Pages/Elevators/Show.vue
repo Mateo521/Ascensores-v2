@@ -48,8 +48,12 @@ const monthNames = [
                     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                         {{ elevator.designation }}
                     </h2>
-                    <p class="text-sm text-gray-600 mt-1" v-if="elevator.address">
-                        📍 {{ elevator.address }}
+                    <p class="text-sm text-gray-600 flex mt-1" v-if="elevator.address">
+                        <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"/>
+</svg>
+ {{ elevator.address }}
                     </p>
                 </div>
                 <Link
@@ -69,8 +73,11 @@ const monthNames = [
                         <div class="flex items-center justify-between mb-6">
                             <div>
                                 <h3 class="text-lg font-semibold">Revisiones Mensuales</h3>
-                                <a :href="publicUrl" target="_blank" class="text-sm text-blue-600 hover:underline">
-                                    🔗 Ver página pública (QR)
+                                <a :href="publicUrl" target="_blank" class="text-sm flex items-center text-blue-600 hover:underline">
+                                    <svg class="w-6 h-6 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.213 9.787a3.391 3.391 0 0 0-4.795 0l-3.425 3.426a3.39 3.39 0 0 0 4.795 4.794l.321-.304m-.321-4.49a3.39 3.39 0 0 0 4.795 0l3.424-3.426a3.39 3.39 0 0 0-4.794-4.795l-1.028.961"/>
+</svg>
+ Ver página pública (QR)
                                 </a>
                             </div>
                             <div class="flex items-center gap-3">
