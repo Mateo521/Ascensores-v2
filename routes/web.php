@@ -12,11 +12,12 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-     Route::get('/ascensores', [ElevatorController::class, 'index'])->name('elevators.index');
+    Route::delete('/ascensores/{elevator}', [ElevatorController::class, 'destroy'])
+        ->name('elevators.destroy');
+    Route::get('/ascensores', [ElevatorController::class, 'index'])->name('elevators.index');
     Route::get('/ascensores/{elevator}', [ElevatorController::class, 'show'])->name('elevators.show');
     Route::post('/ascensores', [ElevatorController::class, 'store'])->name('elevators.store');
     Route::put('/ascensores/{elevator}', [ElevatorController::class, 'update'])->name('elevators.update');
@@ -26,6 +27,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/ascensores/{elevator}/poster.pdf', [PdfController::class, 'poster'])->name('elevators.poster');
 });
 
- Route::get('/p/{token}', [PublicController::class, 'show'])->name('public.elevator');
+Route::get('/p/{token}', [PublicController::class, 'show'])->name('public.elevator');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

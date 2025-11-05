@@ -83,9 +83,15 @@ class ElevatorController extends Controller
         return redirect()->back();
     }
 
-    public function destroy(Elevator $elevator)
-    {
-        $elevator->delete();
-        return redirect()->route('elevators.index');
-    }
+    
+
+    public function destroy(\App\Models\Elevator $elevator)
+{
+    $elevator->delete();
+
+    return redirect()
+        ->route('elevators.index')
+        ->with('success', 'Ascensor eliminado correctamente.');
+}
+
 }
