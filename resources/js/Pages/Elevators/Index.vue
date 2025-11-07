@@ -521,13 +521,13 @@ const showSuccessNotification = () => {
                 </div>
 
                 <!-- Badge de estado -->
-                <div class="absolute top-4 right-4 lg:top-6 lg:right-6">
+                <!--div class="absolute top-4 right-4 lg:top-6 lg:right-6">
                   <span
                     class="inline-flex items-center gap-1.5 px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full border-2 border-green-200">
                     <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                     Activo
                   </span>
-                </div>
+                </div-->
               </div>
             </transition-group>
 
