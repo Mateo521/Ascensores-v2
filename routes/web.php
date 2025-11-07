@@ -11,28 +11,29 @@ Route::get('/', function () {
         : redirect()->route('login');
 });
 
+// === RUTAS PROTEGIDAS (requieren login) ===
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    
+    // Ascensores (CRUD)
     Route::get('/ascensores', [ElevatorController::class, 'index'])->name('elevators.index');
     Route::post('/ascensores', [ElevatorController::class, 'store'])->name('elevators.store');
     Route::get('/ascensores/{elevator}', [ElevatorController::class, 'show'])->name('elevators.show');
     Route::put('/ascensores/{elevator}', [ElevatorController::class, 'update'])->name('elevators.update');
     Route::delete('/ascensores/{elevator}', [ElevatorController::class, 'destroy'])->name('elevators.destroy');
 
-    // Nueva ruta para cargar revisiones por AJAX ()
-    Route::get('/ascensores/{elevator}/revisiones', [ElevatorController::class, 'getRevisions'])
-        ->name('elevators.revisions');
+    // Revisiones (bulk update)
+    Route::put('/ascensores/{elevator}/revisions', [RevisionController::class, 'bulkUpdate'])
+        ->name('revisions.bulk');
 
-   
-    Route::put('/ascensores/{elevator}/revisions', [RevisionController::class, 'bulkUpdate'])->name('revisions.bulk');
-
-    // PDF
-    Route::get('/ascensores/{elevator}/poster.pdf', [PdfController::class, 'poster'])->name('elevators.poster');
+    // PDF/Póster
+    Route::get('/ascensores/{elevator}/poster.pdf', [PdfController::class, 'poster'])
+        ->name('elevators.poster');
 });
 
+ 
 Route::get('/p/{token}', [PublicController::class, 'show'])->name('public.elevator');
+Route::get('/api/public/elevator/{token}/revision', [PublicController::class, 'getRevision'])->name('public.revision');
 
 require __DIR__ . '/auth.php';
