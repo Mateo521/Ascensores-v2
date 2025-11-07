@@ -14,7 +14,7 @@ class ElevatorController extends Controller
         $perPage = (int) $request->query('per_page', 10); // por defecto 10 por página
         $elevators = \App\Models\Elevator::orderBy('designation')
             ->paginate($perPage)
-            ->withQueryString();  
+            ->withQueryString();
 
         return \Inertia\Inertia::render('Elevators/Index', [
             'elevators' => $elevators,
@@ -50,6 +50,8 @@ class ElevatorController extends Controller
             ]);
         }
 
+
+
         return Inertia::render('Elevators/Show', [
             'elevator' => $elevator,
             'year' => (int)$year,
@@ -57,6 +59,33 @@ class ElevatorController extends Controller
             'publicUrl' => url("/p/{$elevator->public_token}")
         ]);
     }
+
+    public function getRevisions(\App\Models\Elevator $elevator, Request $request)
+    {
+        $year = $request->query('year', now()->year);
+        $month = $request->query('month', now()->month);
+
+        $revision = $elevator->revisions()
+            ->where('year', $year)
+            ->where('month', $month)
+            ->first();
+
+        return response()->json([
+            'revision' => $revision ? [
+                'id' => $revision->id,
+                'year' => $revision->year,
+                'month' => $revision->month,
+                'checked' => (bool) $revision->checked,
+                'checked_at' => $revision->checked_at?->locale('es')->isoFormat('D [de] MMMM YYYY HH:mm'),
+                'notes' => $revision->notes,
+            ] : null,
+            'year' => (int) $year,
+            'month' => (int) $month,
+        ]);
+    }
+
+
+
 
     public function store(Request $req)
     {
@@ -83,15 +112,14 @@ class ElevatorController extends Controller
         return redirect()->back();
     }
 
-    
+
 
     public function destroy(\App\Models\Elevator $elevator)
-{
-    $elevator->delete();
+    {
+        $elevator->delete();
 
-    return redirect()
-        ->route('elevators.index')
-        ->with('success', 'Ascensor eliminado correctamente.');
-}
-
+        return redirect()
+            ->route('elevators.index')
+            ->with('success', 'Ascensor eliminado correctamente.');
+    }
 }
