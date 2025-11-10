@@ -62,7 +62,7 @@ const progressPercentage = computed(() => {
               :class="online ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white' : 'bg-gradient-to-r from-red-500 to-rose-600 text-white'">
               <span class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full" :class="online ? 'bg-white animate-pulse' : 'bg-white'"></span>
-                {{ online ? '🟢 Conectado' : '🔴 Sin conexión' }}
+                {{ online ? ' Conectado' : ' Sin conexión' }}
               </span>
             </div>
           </div>
@@ -246,7 +246,7 @@ const progressPercentage = computed(() => {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <p class="text-lg font-semibold">🎉 ¡No hay pendientes este mes!</p>
+              <p class="text-lg font-semibold"> No hay pendientes este mes.</p>
             </div>
 
             <div v-else class="space-y-3">
@@ -324,7 +324,7 @@ const progressPercentage = computed(() => {
                       </span>
                       <span class="px-2 py-1 rounded-lg font-semibold"
                         :class="u.checked ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'">
-                        {{ u.checked ? '✓ Revisado' : '⏳ Pendiente' }}
+                        {{ u.checked ? '✓ Revisado' : 'Pendiente' }}
                       </span>
                     </div>
                   </div>
