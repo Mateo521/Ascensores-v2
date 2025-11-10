@@ -359,7 +359,7 @@ const showSuccessNotification = () => {
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">No hay ascensores registrados</h3>
                 <p class="text-gray-500 text-sm mb-6 max-w-md mx-auto">
-                  Comienza agregando tu primer ascensor usando el formulario de arriba. Es rápido y sencillo.
+                  Comienza agregando tu primer ascensor usando el formulario de arriba. 
                 </p>
                 <div
                   class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl">
