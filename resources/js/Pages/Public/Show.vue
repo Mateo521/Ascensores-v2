@@ -186,7 +186,7 @@ onUnmounted(() => {
                 <div class="px-6 sm:px-8 py-6 bg-gradient-to-br from-gray-50 to-white">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                         <!-- Total -->
-                        <div
+                        <!--div
                             class="group relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-5 border-2 border-blue-200 hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-default">
                             <div
                                 class="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-blue-400/10 to-blue-400/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity">
@@ -204,10 +204,10 @@ onUnmounted(() => {
                                     <div class="text-xs sm:text-sm text-blue-700 font-bold">Total Meses</div>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
 
                         <!-- Revisados -->
-                        <div
+                        <!--div
                             class="group relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 sm:p-5 border-2 border-emerald-200 hover:border-emerald-400 transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-default">
                             <div
                                 class="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-emerald-400/10 to-emerald-400/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity">
@@ -226,10 +226,10 @@ onUnmounted(() => {
                                     <div class="text-xs sm:text-sm text-emerald-700 font-bold">Completados</div>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
 
                         <!-- Pendientes -->
-                        <div
+                        <!--div
                             class="group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 sm:p-5 border-2 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-default">
                             <div
                                 class="absolute inset-0 bg-gradient-to-r from-amber-400/0 via-amber-400/10 to-amber-400/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity">
@@ -248,10 +248,10 @@ onUnmounted(() => {
                                     <div class="text-xs sm:text-sm text-amber-700 font-bold">Pendientes</div>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
 
                         <!-- Porcentaje -->
-                        <div
+                        <!--div
                             class="group relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 sm:p-5 border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-default">
                             <div
                                 class="absolute inset-0 bg-gradient-to-r from-purple-400/0 via-purple-400/10 to-purple-400/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity">
@@ -270,11 +270,11 @@ onUnmounted(() => {
                                     <div class="text-xs sm:text-sm text-purple-700 font-bold">Progreso</div>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
                     </div>
 
                     <!-- Barra de progreso mejorada -->
-                    <div class="mt-6">
+                    <!--div class="mt-6">
                         <div class="flex items-center justify-between text-sm font-semibold mb-2">
                             <span class="text-gray-700">Progreso Anual {{ currentYear }}</span>
                             <span class="text-purple-700">{{ stats.checked }} / {{ stats.total }} meses</span>
@@ -288,8 +288,9 @@ onUnmounted(() => {
                                 <span class="text-xs font-bold text-white drop-shadow-lg">{{ stats.percentage }}%</span>
                             </div>
                         </div>
-                    </div>
+                    </div-->
                 </div>
+                
             </div>
 
             <!-- Selector de año mejorado -->
@@ -480,24 +481,24 @@ onUnmounted(() => {
                             <div class="text-sm font-bold text-gray-800">
                                 Actualización Automática
                             </div>
-                            <div class="text-xs text-gray-600">
+                            <!--div class="text-xs text-gray-600">
                                 {{ isUpdating ? 'Actualizando...' : `Última actualización ${timeSinceUpdate}` }}
-                            </div>
+                            </div-->
                         </div>
                     </div>
 
-                    <div
+                    <!--div
                         class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-300 rounded-xl">
                         <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                         <span class="text-xs font-bold text-green-800">
                             Sincronización cada 1 minuto
                         </span>
-                    </div>
+                    </div-->
                 </div>
             </div>
 
-            <!-- Información adicional -->
-            <div class="bg-white/90 backdrop-blur-xl rounded-3xl shadow-xl border-2 border-white/50 p-6 sm:p-8">
+          
+            <!--div class="bg-white/90 backdrop-blur-xl rounded-3xl shadow-xl border-2 border-white/50 p-6 sm:p-8">
                 <div class="flex items-start gap-4">
                     <div
                         class="flex-shrink-0 p-3 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-lg">
@@ -550,10 +551,12 @@ onUnmounted(() => {
                             </li>
                         </ul>
                     </div>
+
+                    
                 </div>
             </div>
 
-            <!-- Footer con branding -->
+          
             <div class="text-center py-6">
                 <div
                     class="inline-flex items-center gap-2 px-6 py-3 bg-white/50 backdrop-blur-sm rounded-full border border-white/80 shadow-lg">
@@ -563,7 +566,7 @@ onUnmounted(() => {
                     </span>
                     <div class="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full"></div>
                 </div>
-            </div>
+            </div-->
 
 
 

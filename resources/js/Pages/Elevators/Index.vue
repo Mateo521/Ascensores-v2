@@ -359,7 +359,7 @@ const showSuccessNotification = () => {
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">No hay ascensores registrados</h3>
                 <p class="text-gray-500 text-sm mb-6 max-w-md mx-auto">
-                  Comienza agregando tu primer ascensor usando el formulario de arriba. 
+                  Comienza agregando tu primer ascensor usando el formulario de arriba.
                 </p>
                 <div
                   class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl">
@@ -532,45 +532,7 @@ const showSuccessNotification = () => {
             </transition-group>
 
 
-            <style scoped>
-              /* Transiciones para transition-group */
-              .list-move,
-              .list-enter-active,
-              .list-leave-active {
-                transition: all 0.5s ease;
-              }
 
-              .list-enter-from {
-                opacity: 0;
-                transform: translateY(30px);
-              }
-
-              .list-leave-to {
-                opacity: 0;
-                transform: translateX(-30px);
-              }
-
-              .list-leave-active {
-                position: absolute;
-              }
-
-              /* Animaciones personalizadas */
-              @keyframes fade-in-up {
-                from {
-                  opacity: 0;
-                  transform: translateY(20px);
-                }
-
-                to {
-                  opacity: 1;
-                  transform: translateY(0);
-                }
-              }
-
-              .animate-fade-in-up {
-                animation: fade-in-up 0.6s ease-out forwards;
-              }
-            </style>
 
             <!-- Controles de paginación mejorados -->
             <transition enter-active-class="transition ease-out duration-300"
@@ -670,7 +632,46 @@ const showSuccessNotification = () => {
   </AuthenticatedLayout>
 </template>
 
+
 <style scoped>
+/* Transiciones para transition-group */
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.list-leave-active {
+  position: absolute;
+}
+
+/* Animaciones personalizadas */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
 /* Animaciones personalizadas */
 @keyframes fade-in {
   from {

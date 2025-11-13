@@ -44,7 +44,7 @@ const userInitials = computed(() => {
                   <ApplicationLogo class="relative h-12 w-auto fill-current text-gray-800" />
                 </div>
                 <span class="hidden lg:block text-xl font-black text-gray-800 group-hover:text-blue-700 transition-colors">
-                  RevisionControl
+                  Ascensores Nuevo Cuyo
                 </span>
                 </Link>
               </div>
