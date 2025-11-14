@@ -20,7 +20,10 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
+        /*
         return Inertia::render('Auth/Register');
+*/
+        abort(404);
     }
 
     /**
@@ -30,6 +33,8 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
+        /*
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
@@ -47,5 +52,9 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(route('dashboard', absolute: false));
+   
+   */
+
+        abort(404);
     }
 }

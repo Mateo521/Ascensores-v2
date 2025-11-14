@@ -314,7 +314,7 @@ onUnmounted(() => {
 
                     <div
                         class="flex items-center gap-3 bg-gradient-to-r from-gray-100 to-slate-100 rounded-xl p-2 shadow-inner">
-                        <button @click="changeYear(-1)"
+                        <!--button @click="changeYear(-1)"
                             class="group px-4 py-2.5 bg-white hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 border-2 border-gray-200 hover:border-blue-400 rounded-lg font-bold text-sm text-gray-700 hover:text-blue-700 transition-all shadow-sm hover:shadow-md active:scale-95">
                             <span class="flex items-center gap-1">
                                 <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1"
@@ -325,7 +325,7 @@ onUnmounted(() => {
                                 </svg>
                                 {{ currentYear - 1 }}
                             </span>
-                        </button>
+                        </button-->
 
                         <div class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg">
                             <div class="text-2xl font-black text-white text-center min-w-[80px]">
@@ -333,7 +333,7 @@ onUnmounted(() => {
                             </div>
                         </div>
 
-                        <button @click="changeYear(1)"
+                        <!--button @click="changeYear(1)"
                             class="group px-4 py-2.5 bg-white hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 border-2 border-gray-200 hover:border-blue-400 rounded-lg font-bold text-sm text-gray-700 hover:text-blue-700 transition-all shadow-sm hover:shadow-md active:scale-95">
                             <span class="flex items-center gap-1">
                                 {{ currentYear + 1 }}
@@ -344,7 +344,7 @@ onUnmounted(() => {
                                         d="M9 5l7 7-7 7" />
                                 </svg>
                             </span>
-                        </button>
+                        </button-->
                     </div>
                 </div>
             </div>
