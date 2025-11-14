@@ -325,7 +325,7 @@ const showSuccessNotification = () => {
               </div>
 
               <!-- Barra de búsqueda (opcional para futuro) -->
-              <div class="relative max-w-xs w-full">
+              <!--div class="relative max-w-xs w-full">
                 <input v-model="searchQuery" type="text" placeholder="Buscar ascensor..."
                   class="w-full pl-10 pr-4 py-2 bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 rounded-xl focus:bg-white/20 focus:border-white/40 focus:ring-4 focus:ring-white/10 transition-all" />
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -335,7 +335,7 @@ const showSuccessNotification = () => {
                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
-              </div>
+              </div-->
             </div>
           </div>
 

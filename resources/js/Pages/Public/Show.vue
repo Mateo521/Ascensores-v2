@@ -142,42 +142,47 @@ onUnmounted(() => {
                     <div class="absolute inset-0 bg-grid-white/5"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
-                    <div class="relative">
-                        <!-- Icono del ascensor con efecto glow -->
-                        <div class="inline-flex items-center gap-4 mb-4">
-                            <div class="relative">
-                                <div class="absolute inset-0 bg-white/30 rounded-2xl blur-xl animate-pulse"></div>
-                                <div
-                                    class="relative p-4 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30 shadow-2xl">
-                                    <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                                    </svg>
+                    <div class="relative flex md:flex-row flex-col-reverse justify-between items-center">
+                        <div class="px-1">
+                            <!-- Icono del ascensor con efecto glow -->
+                            <div class="inline-flex items-center gap-4 mb-4">
+                                <div class="relative">
+                                    <div class="absolute inset-0 bg-white/30 rounded-2xl blur-xl animate-pulse"></div>
+                                    <div
+                                        class="relative p-4 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30 shadow-2xl">
+                                        <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h1
+                                        class="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight drop-shadow-lg">
+                                        {{ elevator.designation }}
+                                    </h1>
+                                    <p class="text-sm sm:text-base text-blue-100 mt-1 font-medium">
+                                        Control de revisiones periódicas
+                                    </p>
                                 </div>
                             </div>
-                            <div>
-                                <h1
-                                    class="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight drop-shadow-lg">
-                                    {{ elevator.designation }}
-                                </h1>
-                                <p class="text-sm sm:text-base text-blue-100 mt-1 font-medium">
-                                    Control de Revisiones Periódicas
-                                </p>
+
+                            <!-- Dirección -->
+                            <div v-if="elevator.address"
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white">
+                                <svg class="w-5 h-5 text-emerald-300 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span class="text-sm sm:text-base">{{ elevator.address }}</span>
                             </div>
                         </div>
-
-                        <!-- Dirección -->
-                        <div v-if="elevator.address"
-                            class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white">
-                            <svg class="w-5 h-5 text-emerald-300 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            <span class="text-sm sm:text-base">{{ elevator.address }}</span>
+                        <div class=" w-auto object-contain mb-3">
+                            <img src="/logo.png" alt="Ascensores Nuevo Cuyo" class="h-26 rounded-xl" />
                         </div>
                     </div>
                 </div>
@@ -290,7 +295,7 @@ onUnmounted(() => {
                         </div>
                     </div-->
                 </div>
-                
+
             </div>
 
             <!-- Selector de año mejorado -->
@@ -497,7 +502,7 @@ onUnmounted(() => {
                 </div>
             </div>
 
-          
+
             <!--div class="bg-white/90 backdrop-blur-xl rounded-3xl shadow-xl border-2 border-white/50 p-6 sm:p-8">
                 <div class="flex items-start gap-4">
                     <div
