@@ -96,7 +96,7 @@ const progressPercentage = computed(() => {
           </button>
 
           <!-- Agregar Ascensor -->
-          <button @click="agregarAscensor"
+          <button @click="irAscensores"
             class="group relative bg-gradient-to-br from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-black py-8 px-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-100 overflow-hidden">
             <div
               class="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-emerald-400/30 to-emerald-400/0 opacity-0 group-hover:opacity-100 transition-opacity">
