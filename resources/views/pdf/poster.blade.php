@@ -132,43 +132,67 @@
     <div class="wrap card">
         <div class="header">
             @if(!empty($logoBase64))
-                <img src="{{ $logoBase64 }}" alt="Logo" style="width:120px; height:auto;">
+            <img src="{{ $logoBase64 }}" alt="Logo" style="width:120px; height:auto;">
             @endif
             <div class="company-name">{{ $settings->company_name ?? 'Ascensores Nuevo Cuyo' }}</div>
             <div class="sub">
                 @if(!empty($settings->start_of_activity))
-                    Inicio de actividad:
-                    {{ \Carbon\Carbon::parse($settings->start_of_activity)->timezone($tz)->format('d/m/Y') }}
+                Inicio de actividad:
+                {{ \Carbon\Carbon::parse($settings->start_of_activity)->timezone($tz)->format('d/m/Y') }}
                 @endif
                 @if(!empty($settings->cuit))
-                    • CUIT: {{ $settings->cuit }}
+                • CUIT: {{ $settings->cuit }}
                 @endif
             </div>
         </div>
 
         <div class="elevator-info">{{ $elevator->designation }}</div>
+
         @if(!empty($elevator->address))
-            <div class="address"> {{ $elevator->address }}</div>
+        <div class="address">{{ $elevator->address }}</div>
+        @endif
+
+        <!-- Capacidad (solo si tiene valor) -->
+        @if(!empty($elevator->max_capacity_kg))
+        <div class="capacity" style="font-size: 9px; color: #333; text-align: center; margin: 2px 0;">
+            <strong>Capacidad:</strong> {{ $elevator->max_capacity_kg }} kg
+        </div>
+        @endif
+
+        <!-- Comentarios (solo si tiene valor) -->
+        @if(!empty($elevator->comments))
+        <div class="comments" style="font-size: 8px; color: #555; text-align: center; margin: 4px 0; padding: 4px; background: #f9fafb; border-radius: 3px; line-height: 1.3;">
+            <strong>Comentarios:</strong> {{ \Illuminate\Support\Str::limit($elevator->comments, 120) }}
+        </div>
         @endif
 
         <div class="qr-container">
             <img src="{{ $qrBase64 }}" alt="QR Code" class="qr-code">
         </div>
 
-        <!--div class="instructions">
-        Escanee este código QR para ver el estado de las revisiones del ascensor.<br>
-        Se actualiza en tiempo real.
-    </div-->
+        <!-- ⚠️ ADVERTENCIA DE INCENDIO (texto fijo, siempre visible) -->
+        <div class="fire-warning" style="margin: 6px 0; padding: 6px; background: #fef3c7; border: 2px solid #f59e0b; border-radius: 3px; text-align: center;">
+            <div style="font-size: 8px; font-weight: bold; color: #92400e; margin-bottom: 2px;">
+                 ADVERTENCIA
+            </div>
+            <div style="font-size: 9px; font-weight: bold; color: #b45309;">
+                NO UTILIZAR EN CASO DE INCENDIO
+            </div>
+        </div>
 
         <div class="emergency">
             <div class="emergency-title">EN CASO DE EMERGENCIA</div>
-            <div class="emergency-phone"> {{ $settings->emergency_phone ?? '266 455 5572' }}</div>
+            <div class="emergency-phone">{{ $settings->emergency_phone ?? '266 455 5572' }}</div>
         </div>
 
         <div class="footer">
             Generado el {{ $generatedAt }} —
             {{ $settings->company_name ?? 'Ascensores Nuevo Cuyo' }}
         </div>
+
+
+
+
     </div>
 </body>
 

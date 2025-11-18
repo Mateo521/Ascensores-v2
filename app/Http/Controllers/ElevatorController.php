@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Elevator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 
 class ElevatorController extends Controller
 {
@@ -85,39 +85,41 @@ class ElevatorController extends Controller
     }
 
 
-
-
-    public function store(Request $req)
+    public function store(Request $request)
     {
-        $data = $req->validate([
+        $validated = $request->validate([
             'designation' => 'required|string|max:255',
-            'address' => 'nullable|string|max:255',
-            'is_active' => 'boolean'
+            'address'     => 'nullable|string|max:500',
+            'max_capacity_kg' => 'nullable|integer|min:0|max:100000',
+            'comments'    => 'nullable|string|max:1000',
         ]);
-        $data['created_by'] = Auth::id();
-        Elevator::create($data);
 
-        return redirect()->route('elevators.index');
+        $validated['public_token'] = \Illuminate\Support\Str::random(32);
+        $validated['created_by'] = Auth::id(); //
+
+        Elevator::create($validated);
+
+        return redirect()->route('elevators.index')->with('success', 'Ascensor creado con éxito.');
     }
 
-    public function update(Request $req, Elevator $elevator)
+
+    public function update(Request $request, Elevator $elevator)
     {
-        $data = $req->validate([
-            'designation' => 'string|max:255',
-            'address' => 'nullable|string|max:255',
-            'is_active' => 'boolean'
+        $validated = $request->validate([
+            'designation' => 'required|string|max:255',
+            'address'     => 'nullable|string|max:500',
+            'max_capacity_kg' => 'nullable|integer|min:0|max:100000',
+            'comments'    => 'nullable|string|max:1000',
         ]);
-        $elevator->update($data);
+        // Opcional: trackear quién actualizó
+        // $validated['updated_by'] = auth()->id();
+        $elevator->update($validated);
 
-        return redirect()->back();
+        return redirect()->route('elevators.index')->with('success', 'Ascensor actualizado.');
     }
-
-
-
     public function destroy(\App\Models\Elevator $elevator)
     {
         $elevator->delete();
-
         return redirect()
             ->route('elevators.index')
             ->with('success', 'Ascensor eliminado correctamente.');

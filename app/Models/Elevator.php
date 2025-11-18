@@ -9,13 +9,32 @@ use Illuminate\Support\Str;
 
 class Elevator extends Model
 {
-    protected $fillable = ['designation', 'address', 'public_token', 'is_active', 'created_by'];
+    // app/Models/Elevator.php
+    protected $fillable = [
+        'designation',
+        'address',
+        'max_capacity_kg',
+        'comments',
+        'public_token',
+        'created_by',
+        // 'updated_by', // si lo usas
+    ];
 
-    protected static function booted() {
+
+    protected $casts = [
+        'fire_system' => 'boolean',
+    ];
+
+
+    protected static function booted()
+    {
         static::creating(function ($model) {
             $model->public_token = $model->public_token ?: Str::random(48);
         });
     }
 
-    public function revisions() { return $this->hasMany(Revision::class); }
+    public function revisions()
+    {
+        return $this->hasMany(Revision::class);
+    }
 }
