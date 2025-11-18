@@ -103,6 +103,13 @@ class ElevatorController extends Controller
     }
 
 
+    public function edit(Elevator $elevator)
+    {
+        return Inertia::render('Elevators/Edit', [
+            'elevator' => $elevator
+        ]);
+    }
+
     public function update(Request $request, Elevator $elevator)
     {
         $validated = $request->validate([

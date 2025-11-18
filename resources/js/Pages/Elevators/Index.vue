@@ -608,6 +608,20 @@ const showSuccessNotification = () => {
                       <span class="relative z-10">Ver Revisiones</span>
                     </a>
 
+                    
+                    <Link :href="route('elevators.edit', elevator.id)"
+                      class="group/btn relative overflow-hidden inline-flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 rounded-xl font-semibold text-xs text-white uppercase tracking-wide transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95">
+                    <div
+                      class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700">
+                    </div>
+                    <svg class="w-5 h-5 relative z-10" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                    <span class="relative z-10">Editar</span>
+                    </Link>
+
                     <a :href="route('elevators.poster', elevator.id)" target="_blank"
                       class="group/btn relative overflow-hidden inline-flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-xl font-semibold text-xs text-white uppercase tracking-wide transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95">
                       <div
@@ -635,6 +649,9 @@ const showSuccessNotification = () => {
                       <span class="relative z-10">Eliminar</span>
                     </button>
                   </div>
+
+
+
                 </div>
 
                 <!-- Badge de estado -->

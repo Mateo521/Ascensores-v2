@@ -30,9 +30,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // PDF/Póster
     Route::get('/ascensores/{elevator}/poster.pdf', [PdfController::class, 'poster'])
         ->name('elevators.poster');
+
+
+    Route::get('/ascensores/{elevator}/editar', [ElevatorController::class, 'edit'])
+        ->name('elevators.edit');
+
+        
+    Route::put('/ascensores/{elevator}', [ElevatorController::class, 'update'])
+        ->name('elevators.update');
 });
 
- 
+
 Route::get('/p/{token}', [PublicController::class, 'show'])->name('public.elevator');
 Route::get('/api/public/elevator/{token}/revision', [PublicController::class, 'getRevision'])->name('public.revision');
 
