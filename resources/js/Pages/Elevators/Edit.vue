@@ -181,6 +181,8 @@ const submit = () => {
                 </div>
               </div>
 
+
+              
               <!-- Botones -->
               <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-6 border-t-2 border-gray-100">
                 <button type="submit" :disabled="form.processing" class="group relative flex-1 sm:flex-none inline-flex items-center justify-center gap-3 overflow-hidden bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 hover:from-amber-700 hover:via-orange-700 hover:to-red-700 text-white font-bold text-sm py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:-translate-y-1 active:scale-95">
